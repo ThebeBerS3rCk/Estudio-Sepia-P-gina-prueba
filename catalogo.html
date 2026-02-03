@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos - Estudio Sepia</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Load theme from localStorage before rendering
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+</head>
+<body class="catalog-page">
+    <header class="dark-glow catalog-header">
+        <div class="catalog-header-top">
+            <button class="back-btn" onclick="window.location.href='index.html'">Volver</button>
+            <button id="theme-toggle" class="theme-toggle">Cambiar Tema</button>
+        </div>
+        <div class="catalog-header-copy">
+            <h1>Catálogo de Productos</h1>
+            <p>Explora todos nuestros productos en detalle.</p>
+        </div>
+    </header>
+
+    <main class="catalog-main">
+        <section class="catalog-toolbar dark-glow">
+            <div class="toolbar-copy">
+                <h2>Nuestros Productos</h2>
+                <p class="catalog-subtitle">12 productos seleccionados · Calidad premium para estudio y oficina.</p>
+            </div>
+            <div class="toolbar-actions">
+                <button class="ghost-btn">Ver promociones</button>
+                <button class="ghost-btn" onclick="window.location.href='servicios.html'">Ver servicios</button>
+                <button class="cta-btn">Armar pedido</button>
+            </div>
+        </section>
+
+        <section class="catalog-filters dark-glow">
+            <div class="search-field">
+                <label for="catalog-search">Buscar</label>
+                <input id="catalog-search" type="search" placeholder="Buscar cuadernos, bolígrafos, papeles..." />
+            </div>
+            <div class="filter-chips">
+                <span class="chips-label">Categorías</span>
+                <div class="chips">
+                    <button class="chip active">Todo</button>
+                    <button class="chip">Cuadernos</button>
+                    <button class="chip">Bolígrafos</button>
+                    <button class="chip">Oficina</button>
+                    <button class="chip">Papeles</button>
+                </div>
+            </div>
+            <div class="sort-field">
+                <label for="catalog-sort">Ordenar</label>
+                <select id="catalog-sort">
+                    <option>Más populares</option>
+                    <option>Novedades</option>
+                    <option>Precio: menor a mayor</option>
+                    <option>Precio: mayor a menor</option>
+                </select>
+            </div>
+        </section>
+
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-heading">
+                    <h3>Cuadernos</h3>
+                    <p class="category-note">Texturas cálidas y resistentes para uso diario.</p>
+                </div>
+                <div class="products-container">
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-cuaderno-a4" data-item-name="Cuaderno Rayado A4" data-item-type="producto">
+                        <div class="product-media media-notebook">
+                            <span class="badge">Top</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Cuaderno Rayado A4</strong>
+                            <span class="product-tag">A4 · 100 hojas</span>
+                            <p>Cuaderno de alta calidad con tapa dura en cartulina marrón.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$4.90</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-cuaderno-a5" data-item-name="Cuaderno Cuadriculado A5" data-item-type="producto">
+                        <div class="product-media media-notebook">
+                            <span class="badge">Nuevo</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Cuaderno Cuadriculado A5</strong>
+                            <span class="product-tag">A5 · 80 hojas</span>
+                            <p>Cuaderno compacto con tapa blanda en negro, ideal para bocetos.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$3.50</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-libreta-blanca" data-item-name="Libreta de Notas Blanca" data-item-type="producto">
+                        <div class="product-media media-notebook">
+                            <span class="badge">Minimal</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Libreta de Notas Blanca</strong>
+                            <span class="product-tag">120 hojas</span>
+                            <p>Libreta minimalista de hojas blancas, perfecta para creatividad.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$3.90</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-heading">
+                    <h3>Lápices y Bolígrafos</h3>
+                    <p class="category-note">Trazo limpio y materiales premium para escritura diaria.</p>
+                </div>
+                <div class="products-container">
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-lapiz-hb" data-item-name="Lápiz HB Clásico" data-item-type="producto">
+                        <div class="product-media media-pen">
+                            <span class="badge">Esencial</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Lápiz HB Clásico</strong>
+                            <span class="product-tag">Pack x12</span>
+                            <p>Lápiz de madera natural con mina HB, escritura suave y precisa.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$2.40</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-boligrafo-gel" data-item-name="Bolígrafo Gel Negro" data-item-type="producto">
+                        <div class="product-media media-pen">
+                            <span class="badge">Premium</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Bolígrafo Gel Negro</strong>
+                            <span class="product-tag">0.5 mm</span>
+                            <p>Bolígrafo de tinta gel, cuerpo mate y trazo fluido.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$2.90</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-boligrafo-roller" data-item-name="Bolígrafo Roller Blanco" data-item-type="producto">
+                        <div class="product-media media-pen">
+                            <span class="badge">Suave</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Bolígrafo Roller Blanco</strong>
+                            <span class="product-tag">0.7 mm</span>
+                            <p>Bolígrafo roller con tinta azul, ideal para documentos.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$2.70</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-heading">
+                    <h3>Accesorios de Oficina</h3>
+                    <p class="category-note">Herramientas confiables para ordenar y trabajar mejor.</p>
+                </div>
+                <div class="products-container">
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-carpeta-organizadora" data-item-name="Carpeta Organizadora" data-item-type="producto">
+                        <div class="product-media media-office">
+                            <span class="badge">Pro</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Carpeta Organizadora</strong>
+                            <span class="product-tag">A4 · 6 divisiones</span>
+                            <p>Carpeta con múltiples bolsillos, perfecta para organizar documentos.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$5.80</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-grapadora-metalica" data-item-name="Grapadora Metálica" data-item-type="producto">
+                        <div class="product-media media-office">
+                            <span class="badge">Robusta</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Grapadora Metálica</strong>
+                            <span class="product-tag">20 hojas</span>
+                            <p>Grapadora en metal negro con mecanismo duradero.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$6.50</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-tijeras-oficina" data-item-name="Tijeras de Oficina" data-item-type="producto">
+                        <div class="product-media media-office">
+                            <span class="badge">Precisión</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Tijeras de Oficina</strong>
+                            <span class="product-tag">18 cm</span>
+                            <p>Tijeras de acero inoxidable, corte preciso para papel.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$4.20</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-heading">
+                    <h3>Papeles y Sobres</h3>
+                    <p class="category-note">Papelería premium con acabados suaves y tonos cálidos.</p>
+                </div>
+                <div class="products-container">
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-papel-bond-a4" data-item-name="Papel Bond A4" data-item-type="producto">
+                        <div class="product-media media-paper">
+                            <span class="badge">Best seller</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Papel Bond A4</strong>
+                            <span class="product-tag">500 hojas</span>
+                            <p>Paquete de papel bond blanco ideal para impresiones.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$7.90</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-sobre-c6" data-item-name="Sobre Blanco C6" data-item-type="producto">
+                        <div class="product-media media-paper">
+                            <span class="badge">Clásico</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Sobre Blanco C6</strong>
+                            <span class="product-tag">Pack x50</span>
+                            <p>Sobre blanco estándar, perfecto para correspondencia.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$3.20</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                    <div class="card product-card dark-glow selectable-item" data-item-id="prod-papel-pastel" data-item-name="Papel de Colores Pastel" data-item-type="producto">
+                        <div class="product-media media-paper">
+                            <span class="badge">Creativo</span>
+                        </div>
+                        <div class="product-body">
+                            <strong>Papel de Colores Pastel</strong>
+                            <span class="product-tag">Set x100</span>
+                            <p>Set de papeles pastel en tonos cálidos para manualidades.</p>
+                        </div>
+                        <div class="product-meta">
+                            <span class="price">$6.10</span>
+                            <button class="ghost-btn">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="catalog-cta dark-glow">
+            <div class="cta-copy">
+                <h2>¿Necesitás un pedido personalizado?</h2>
+                <p>Armamos presupuestos para empresas, escuelas y proyectos creativos.</p>
+            </div>
+            <div class="cta-actions">
+                <button class="cta-btn">Contactar ahora</button>
+                <button class="ghost-btn">Ver horarios</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="floating-order-card" class="floating-order-card">Ver pedido</div>
+
+    <footer>
+        <p>Dirección: Calle Principal 123, Ciudad. Teléfono: 123-456-7890</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

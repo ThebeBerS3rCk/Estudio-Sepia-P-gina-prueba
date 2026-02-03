@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio Sepia</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Load theme from localStorage before rendering
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</head>
+<body class="index-page">
+    <header class="dark-glow">
+        <button id="theme-toggle" class="theme-toggle">Cambiar Tema</button>
+        <h1 class="store-title">Bienvenidos a Estudio Sepia</h1>
+        <p class="store-tagline">Papelería & Estudio Editorial</p>
+    </header>
+
+    <section class="index-hero dark-glow">
+        <div class="hero-copy">
+            <p class="eyebrow">Papelería & Estudio</p>
+            <h2>Calidez artesanal para ideas que merecen verse bien.</h2>
+            <p class="hero-text">Catálogo, servicios y atención cuidada en una experiencia coherente y elegante.</p>
+        </div>
+        <div class="hero-actions">
+            <button class="cta-btn" onclick="document.getElementById('home-cards')?.scrollIntoView({ behavior: 'smooth', block: 'start' })">Explorar</button>
+        </div>
+    </section>
+
+    <section class="index-trust dark-glow">
+        <div class="trust-copy">
+            <h2>Confianza y detalles</h2>
+            <p>Lo esencial para que el cliente sienta seguridad desde el primer vistazo.</p>
+        </div>
+        <div class="trust-grid">
+            <div class="trust-card">
+                <span class="trust-icon">◎</span>
+                <strong>Calidad editorial</strong>
+                <span>Acabados prolijos y materiales cálidos.</span>
+            </div>
+            <div class="trust-card">
+                <span class="trust-icon">◉</span>
+                <strong>Entrega 24-48h</strong>
+                <span>Opciones flexibles según urgencia.</span>
+            </div>
+            <div class="trust-card">
+                <span class="trust-icon">○</span>
+                <strong>Asesoría cercana</strong>
+                <span>Te guiamos en formatos y materiales.</span>
+            </div>
+            <div class="trust-card">
+                <span class="trust-icon">◇</span>
+                <strong>Pedidos a medida</strong>
+                <span>Para escuelas, empresas y equipos.</span>
+            </div>
+        </div>
+    </section>
+
+    <div id="home-cards" class="container">
+        <section id="productos" class="card dark-glow" onclick="window.location.href='catalogo.html'">
+            <h2>Nuestros Productos</h2>
+        </section>
+
+        <section id="servicios" class="card dark-glow" onclick="window.location.href='servicios.html'">
+            <h2>Servicios</h2>
+        </section>
+    </div>
+
+    <section class="index-story dark-glow">
+        <div>
+            <h2>Nuestra historia</h2>
+            <p>Estudio Sepia combina papelería y sensibilidad editorial para proyectos que necesitan orden, calidez y presencia.</p>
+        </div>
+        <div class="story-highlight">
+            <p>Desde el primer boceto hasta la entrega final, cuidamos ritmo, textura y consistencia visual.</p>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p><strong>Horarios:</strong> Lunes a Viernes 9:00 - 18:00</p>
+        <p><strong>Email:</strong> info@estudiosepia.com</p>
+        <p><strong>Teléfono:</strong> 123-456-7890</p>
+    </section>
+
+    <footer>
+        <p>Dirección: Calle Principal 123, Ciudad.</p>
+    </footer>
+
+    <section id="reseñas-clientes">
+        <div class="reseñas-inner">
+            <h2>Reseñas de Clientes</h2>
+            <div class="reviews-columns">
+                <div class="comments-column">
+                    <div class="comments-list">
+                        <div class="comment">
+                            <strong>María García</strong>
+                            <p>Excelente calidad en sus productos. Siempre encuentro lo que necesito.</p>
+                        </div>
+                        <div class="comment">
+                            <strong>Juan Pérez</strong>
+                            <p>Servicio rápido y amable. Recomiendo esta papelería.</p>
+                        </div>
+                        <div class="comment">
+                            <strong>Ana López</strong>
+                            <p>Los precios son competitivos y la variedad es impresionante.</p>
+                        </div>
+                        <div class="comment">
+                            <strong>Carlos Ruiz</strong>
+                            <p>Gran selección de artículos escolares. Muy satisfecho.</p>
+                        </div>
+                        <div class="comment">
+                            <strong>Laura Fernández</strong>
+                            <p>Atención al cliente de primera. Volveré pronto.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-column">
+                    <div class="comment-input">
+                        <button class="write-comment-btn">Enviar comentario</button>
+                        <textarea placeholder="Escribir un comentario" rows="2"></textarea>
+                        <p class="demo-note">* Solo para demostración de portafolio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
